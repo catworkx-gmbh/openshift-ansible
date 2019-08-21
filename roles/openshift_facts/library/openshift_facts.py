@@ -1443,7 +1443,7 @@ class OpenShiftFacts(object):
         product_name = self.system_facts['ansible_product_name']
         product_version = self.system_facts['ansible_product_version']
         virt_type = self.system_facts['ansible_virtualization_type']
-        virt_role = self.system_facts['ansible_virtualization_role']
+        virt_role = self.system_facts.get('ansible_virtualization_role', None)
         bios_vendor = self.system_facts['ansible_system_vendor']
         provider = None
         metadata = None
